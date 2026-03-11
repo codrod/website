@@ -1,0 +1,33 @@
+$bootstrap-icons-font-dir: "bootstrap-icons/font/fonts";
+
+@import "bootstrap/scss/bootstrap.scss";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+body {
+    background-color: #FAFAFA;
+}
+
+main {
+    min-height: 100vh;
+}
+
+footer {
+    width: 100%;
+}
+
+header {
+    .nav-item { 
+        .nav-link {
+            font-size: 18px;
+            color: #FAFAFA;
+        }
+
+    }
+
+    .dropdown-menu {
+        background-color: #212529;
+        .dropdown-item {
+            color: #FAFAFA
+        }
+    }
+}

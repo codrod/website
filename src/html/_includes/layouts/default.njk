@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ description or site.description }}">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    {# Open graph related #}
+    <meta property="og:title" content="{{ title or site.title or site.name }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ site.url+(url or "")}}"/>
+    <meta property="og:image" content="{{ image or site.image }}"/>
+    <meta property="og:site_name" content="{{ name or site.name }}"/>
+    <meta property="og:description" content="{{ description or site.description }}"/>
+    <title>
+      {% if title %}
+        {{ title }} | {{ site.title }}
+      {% else %}
+        {{ site.title or site.name }}
+      {% endif %}
+    </title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#212529">
+    {% if isDev %}
+      <link rel="stylesheet" href="/app.css" />
+      <script type="text/javascript" src="/app.js"></script>
+    {% endif %}
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Links
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" rel="noopener noreferrer" target="_blank" href="https://linkedin.com/in/codrod">LinkedIn&nbsp;<i class="bi bi-box-arrow-up-right"></i></a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" rel="noopener noreferrer" target="_blank" href="https://github.com/codrod">Github&nbsp;<i class="bi bi-box-arrow-up-right"></i></a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" rel="noopener noreferrer" target="_blank" href="https://gitlab.com/codrod">Gitlab&nbsp;<i class="bi bi-box-arrow-up-right"></i></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container p-4">
+      {{ content | safe }}
+    </main>
+    <footer class="text-bg-dark text-center p-4">
+      <div class="container">
+        <span>Built with <a href="https://www.11ty.dev/">11ty</a></span><br/>
+        <span>Hosted on <a href="https://docs.github.com/en/pages">Github Pages</a></span><br/>
+        <span>© 2026 Cody Rodgers</span>
+      </div>
+    </footer>
+  </body>
+</html>
