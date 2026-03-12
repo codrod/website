@@ -8,6 +8,9 @@ const pather = require('path');
 
 module.exports = merge(common, {
   mode: 'production',
+  optimization: {
+    minimize: false
+  },
   watchOptions: {
     ignored: ["**/node_modules", "**/dist"],
   },
@@ -40,6 +43,7 @@ module.exports = merge(common, {
       fontFace: true,
       keyframes: true,
       variables: true,
+      safelist: ['show']
     }),
   ],
   module: {
