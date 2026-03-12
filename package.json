@@ -15,7 +15,8 @@
     "start:webpack": "webpack serve --config webpack.config.dev.js",
     "start:eleventy": "eleventy --serve",
     "build": "npm run clean && eleventy && webpack --config webpack.config.prod.js",
-    "test": "npm run clean && eleventy && webpack serve --config webpack.config.prod.js"
+    "test": "npm run clean && eleventy && webpack serve --config webpack.config.prod.js",
+    "publish": "npm run build && rimraf docs && cp -r dist docs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
