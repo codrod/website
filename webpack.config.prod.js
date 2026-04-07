@@ -2,7 +2,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
-const glob = require('glob-all');
+const { globSync } = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pather = require('path');
 
@@ -26,7 +26,7 @@ module.exports = merge(common, {
   },
   plugins: [
     //Find all HTML files and inject bundled CSS/JS link/script tags. Note Eleventy should be run first
-    ...glob.sync("**/*.html", {cwd: './dist'}).map(pathToHtml => new HtmlWebpackPlugin({
+    ...globSync("**/*.html", {cwd: './dist'}).map(pathToHtml => new HtmlWebpackPlugin({
       template: './dist/' + pathToHtml,
       filename: pathToHtml
     })),
@@ -36,7 +36,7 @@ module.exports = merge(common, {
     }),
     //Removes any used CSS classes/fonts/etc. from the bundled css
     new PurgeCSSPlugin({
-      paths: glob.sync("./src/**/*", { nodir: true }),
+      paths: globSync("./src/**/*", { nodir: true }),
       fontFace: true,
       keyframes: true,
       variables: true,
@@ -66,7 +66,15 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
-          'sass-loader'
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                quietDeps: true, // Silences warnings from node_modules
+                silenceDeprecations: ['import']
+              },
+            },
+          },
         ],
       },
     ],
