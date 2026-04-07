@@ -15,7 +15,6 @@
     "dev": "npm-run-all --parallel dev:webpack dev:eleventy",
     "dev:webpack": "webpack serve --config webpack.config.dev.js",
     "dev:eleventy": "eleventy --serve",
-    "publish": "npm run build && rimraf docs && cp -r dist docs",
     "clean": "rimraf dist"
   },
   "devDependencies": {
