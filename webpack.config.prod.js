@@ -26,7 +26,7 @@ module.exports = merge(common, {
   },
   plugins: [
     //Find all HTML files and inject bundled CSS/JS link/script tags. Note Eleventy should be run first
-    ...globSync("**/*.html", {cwd: './dist'}).map(pathToHtml => new HtmlWebpackPlugin({
+    ...globSync("**/*.html", { cwd: './dist' }).map(pathToHtml => new HtmlWebpackPlugin({
       template: './dist/' + pathToHtml,
       filename: pathToHtml
     })),
@@ -36,11 +36,10 @@ module.exports = merge(common, {
     }),
     //Removes any used CSS classes/fonts/etc. from the bundled css
     new PurgeCSSPlugin({
-      paths: globSync("./src/**/*", { nodir: true }),
+      paths: [...globSync("./src/**/*", { nodir: true }), "./node_modules/bootstrap/js/src/collapse.js", "./node_modules/bootstrap/js/src/dropdown.js"],
       fontFace: true,
       keyframes: true,
       variables: true,
-      safelist: ['show']
     }),
   ],
   module: {
@@ -54,7 +53,7 @@ module.exports = merge(common, {
           options: {
             targets: "defaults",
             presets: [
-              ['@babel/preset-env']
+              ['@babel/preset-env', { "modules": false }]
             ]
           }
         }
