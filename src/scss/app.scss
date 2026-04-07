@@ -3,31 +3,33 @@ $bootstrap-icons-font-dir: "bootstrap-icons/font/fonts";
 @import "bootstrap/scss/bootstrap.scss";
 @import "bootstrap-icons/font/bootstrap-icons";
 
-body {
-    background-color: #FAFAFA;
+main {
+    min-height: calc(100vh - (128px + 56px));
+    @include media-breakpoint-up(md) {
+        min-height: calc(100vh - (128px + 96px));
+    }
 }
 
-main {
-    min-height: 100vh;
+#navbar {
+    @include media-breakpoint-up(md) {
+        height: 96px;
+    }
 }
 
 footer {
-    width: 100%;
+    height: 128px;
 }
 
-header {
-    .nav-item { 
-        .nav-link {
-            font-size: 18px;
-            color: #FAFAFA;
-        }
-
+#profile-details {
+    text-align: center;
+    margin-top: 1.5rem;
+    @include media-breakpoint-up(md) {
+        text-align: left;
+        margin-top: 0;
     }
+}
 
-    .dropdown-menu {
-        background-color: #212529;
-        .dropdown-item {
-            color: #FAFAFA
-        }
-    }
+#profile-image {
+    height: 320px;
+    width: 320px;
 }

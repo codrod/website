@@ -10,13 +10,13 @@
   "license": "",
   "author": "Cody Rodgers",
   "scripts": {
-    "clean": "rimraf dist",
-    "start": "npm-run-all --parallel start:webpack start:eleventy",
-    "start:webpack": "webpack serve --config webpack.config.dev.js",
-    "start:eleventy": "eleventy --serve",
+    "start": "npm run clean && eleventy && webpack serve --config webpack.config.prod.js",
     "build": "npm run clean && eleventy && webpack --config webpack.config.prod.js",
-    "test": "npm run clean && eleventy && webpack serve --config webpack.config.prod.js",
-    "publish": "npm run build && rimraf docs && cp -r dist docs"
+    "dev": "npm-run-all --parallel dev:webpack dev:eleventy",
+    "dev:webpack": "webpack serve --config webpack.config.dev.js",
+    "dev:eleventy": "eleventy --serve",
+    "publish": "npm run build && rimraf docs && cp -r dist docs",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",

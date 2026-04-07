@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,19 +29,19 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <nav id="navbar" class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container">
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-bs-target="#navbar-content"
+            aria-controls="navbar-content"
             aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse" id="navbar-content">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="/">About</a>
@@ -70,13 +70,13 @@
         </div>
       </nav>
     </header>
-    <main class="container p-4">
+    <main class="container py-4">
       {{ content | safe }}
     </main>
-    <footer class="text-bg-dark text-center p-4">
+    <footer class="w-100 text-center bg-body-tertiary d-flex align-items-center">
       <div class="container">
-        <span>Built with <a href="https://www.11ty.dev/">11ty</a></span><br/>
-        <span>Hosted on <a href="https://docs.github.com/en/pages">Github Pages</a></span><br/>
+        <span>Built with <a rel="noopener noreferrer" target="_blank" href="https://www.11ty.dev/">11ty</a></span><br/>
+        <span>Hosted on <a rel="noopener noreferrer" target="_blank" href="https://docs.github.com/en/pages">Github Pages</a></span><br/>
         <span>© 2026 Cody Rodgers</span>
       </div>
     </footer>
