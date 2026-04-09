@@ -6,34 +6,56 @@ url: /contact
 
 <h1 class="mb-4">Contact</h1>
 <p>
-    If you are interested in hiring me, you can contact me at
-    <a href="mailto:contact@codrod.dev">contact@codrod.dev</a>,
-    <a rel="noopener noreferrer" target="_blank" href="https://linkedin.com/in/codrod">LinkedIn</a>, or use the form below.
-</p>
-<p>
-    If you are contacting me to report a bug or make a suggestion, please create bug report through either
-    <a rel="noopener noreferrer" target="_blank" href="https://github.com/codrod">Github</a>
+    If you are reporting a bug, making a suggestion, or requesting a feature then please open an issue through the issue
+    tracker for
+    <a rel="noopener noreferrer" target="_blank" href="https://github.com/codrod">GitHub</a>
     or
-    <a rel="noopener noreferrer" target="_blank" href="https://gitlab.com/codrod">Gitlab</a>, depending on where is hosted.
-        If you want to make a suggestion or request you can create a discussion post or message me directly.
+    <a rel="noopener noreferrer" target="_blank" href="https://gitlab.com/codrod">GitLab</a>.
 </p>
 <p>
-    For everything else use the form below or email me directly at
-    <a href="mailto:contact@codrod.dev">contact@codrod.dev</a>
+    If you are a recruiter or an employer, please message me on
+    <a rel="noopener noreferrer" target="_blank" href="https://linkedin.com/in/codrod">LinkedIn</a>.
+</p>
+<p>
+    For everything else use the form below:
 </p>
 <hr class="my-4"/>
-<form>
+<form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
     <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email">
+        <label for="email" class="form-label">Email Address*</label>
+        <input type="email" class="form-control" name="email" required>
     </div>
     <div class="mb-3">
-        <label for="name" class="form-label">Full Name</label>
-        <input type="email" class="form-control" id="name">
+        <label for="name" class="form-label">Full Name*</label>
+        <input type="text" class="form-control" name="name" required>
     </div>
     <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" rows="10"></textarea>
+        <label for="message" class="form-label">Message*</label>
+        <textarea class="form-control" name="message" rows="10" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <input type="hidden" name="access_key" value="b1c20a4b-65ab-41e5-bcea-6dce82e72560">
+    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+    <div class="mt-3">
+        <div
+            class="h-captcha"
+            data-captcha="true"
+            data-bs-toggle="tooltip"
+            data-bs-placement="left"
+            data-bs-title="Captcha is required"></div>
+    </div>
 </form>
+<script src="https://web3forms.com/client/script.js" async defer></script>
+<script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function (e) {
+        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
+        if (! hCaptcha.value) {
+            e.preventDefault();
+            bootstrap
+                .Tooltip
+                .getOrCreateInstance(hCaptcha.parentElement)
+                .show();
+            return
+        }
+    });
+</script>

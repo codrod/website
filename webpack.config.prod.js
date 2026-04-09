@@ -36,7 +36,7 @@ module.exports = merge(common, {
     }),
     //Removes any used CSS classes/fonts/etc. from the bundled css
     new PurgeCSSPlugin({
-      paths: [...globSync("./src/**/*", { nodir: true }), "./node_modules/bootstrap/js/src/collapse.js", "./node_modules/bootstrap/js/src/dropdown.js"],
+      paths: [...globSync("./src/**/*", { nodir: true }), "./node_modules/bootstrap/js/src/collapse.js", "./node_modules/bootstrap/js/src/dropdown.js", "./node_modules/bootstrap/js/src/tooltip.js"],
       fontFace: true,
       keyframes: true,
       variables: true,

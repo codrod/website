@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,11 +24,11 @@
     <meta name="theme-color" content="#212529">
     {% if isDev %}
       <link rel="stylesheet" href="/app.css"/>
-      <script type="text/javascript" src="/app.js"></script>
+      <script type="text/javascript" src="/app.js" defer></script>
     {% endif %}
   </head>
   <body>
-    <header>
+    <header data-bs-theme="dark">
       <nav id="navbar" class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container">
           <button
@@ -75,7 +75,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item icon-link" rel="noopener noreferrer" target="_blank" href="https://github.com/codrod">Github
+                    <a class="dropdown-item icon-link" rel="noopener noreferrer" target="_blank" href="https://github.com/codrod">GitHub
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1rem"
@@ -94,7 +94,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item icon-link" rel="noopener noreferrer" target="_blank" href="https://gitlab.com/codrod">Gitlab
+                    <a class="dropdown-item icon-link" rel="noopener noreferrer" target="_blank" href="https://gitlab.com/codrod">GitLab
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1rem"
@@ -119,10 +119,10 @@
         </div>
       </nav>
     </header>
-    <main class="container py-4">
+    <main class="container py-4" data-bs-theme="light">
       {{ content | safe }}
     </main>
-    <footer class="w-100 text-center bg-body-tertiary d-flex align-items-center">
+    <footer class="w-100 text-center bg-body-tertiary d-flex align-items-center text-body-tertiary" data-bs-theme="dark">
       <div class="container">
         <span>Built with
           <a class="icon-link" rel="noopener noreferrer" target="_blank" href="https://www.11ty.dev/">11ty
