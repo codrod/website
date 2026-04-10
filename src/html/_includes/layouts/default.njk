@@ -27,8 +27,8 @@
     {% endif %}
   </head>
   <body>
-    <header data-bs-theme="dark">
-      <nav id="navbar" class="navbar navbar-expand-md bg-body-tertiary">
+    <header>
+      <nav id="navbar" class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
         <div class="container">
           <button
             class="navbar-toggler"
@@ -43,13 +43,13 @@
           <div class="collapse navbar-collapse" id="navbar-content">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="/">About</a>
+                <a class="nav-link active" href="/">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
+                <a class="nav-link active" href="/contact">Contact</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Links
                 </a>
                 <ul class="dropdown-menu">
@@ -121,7 +121,7 @@
     <main class="container py-4 bg-body text-body" data-bs-theme="light">
       {{ content | safe }}
     </main>
-    <footer class="w-100 text-center bg-body-tertiary d-flex align-items-center text-body-tertiary" data-bs-theme="dark">
+    <footer class="w-100 text-center d-flex align-items-center text-bg-dark">
       <div class="container">
         <span>Built with
           <a class="icon-link" rel="noopener noreferrer" target="_blank" href="https://www.11ty.dev/">11ty
