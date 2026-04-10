@@ -18,12 +18,10 @@ import Dropdown from '../../node_modules/bootstrap/js/src/dropdown'
 import Collapse from '../../node_modules/bootstrap/js/src/collapse'
 
 //Export bootstrap
-let bootstrap = {};
-bootstrap.Tooltip = Tooltip;
-bootstrap.Dropdown = Dropdown;
-bootstrap.Collapse = Collapse;
-window.bootstrap = bootstrap;
+window.bootstrap = {};
+window.bootstrap.Tooltip = Tooltip;
+window.bootstrap.Dropdown = Dropdown;
+window.bootstrap.Collapse = Collapse;
 
 //Initialize all tooltips on the page
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+[...document.querySelectorAll('[data-bs-toggle="tooltip"]')].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));

@@ -2,6 +2,6 @@
     "name": "codrod.dev",
     "title": "Cody Rodgers",
     "url": "https://codrod.dev",
-    "image": "/img/profile.jpg",
+    "image": "https://codrod.dev/img/profile.jpg",
     "description": "Cody Rodgers portfolio"
 }

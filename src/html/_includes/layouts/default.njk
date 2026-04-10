@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ description or site.description }}">
-    <meta
-    name="referrer" content="no-referrer-when-downgrade">
-    <meta property="og:title" content="{{ title or site.title or site.name }}"/>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta property="og:title" content="{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title or site.name }}{% endif %}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ site.url+(url or "") }}"/>
     <meta property="og:image" content="{{ image or site.image }}"/>
@@ -56,7 +55,7 @@
                 <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item icon-link" rel="noopener noreferrer" target="_blank" href="https://linkedin.com/in/codrod">
-                        LinkedIn
+                      LinkedIn
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="1rem"
@@ -119,7 +118,7 @@
         </div>
       </nav>
     </header>
-    <main class="container py-4" data-bs-theme="light">
+    <main class="container py-4 bg-body text-body" data-bs-theme="light">
       {{ content | safe }}
     </main>
     <footer class="w-100 text-center bg-body-tertiary d-flex align-items-center text-body-tertiary" data-bs-theme="dark">
@@ -166,4 +165,3 @@
       </div>
     </footer>
   </body>
-</html>
