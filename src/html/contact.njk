@@ -23,15 +23,15 @@ url: /contact
 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
     <div class="mb-3">
         <label for="email" class="form-label">Email Address*</label>
-        <input type="email" class="form-control" name="email" required>
+        <input type="email" class="form-control" id="email" name="email" required>
     </div>
     <div class="mb-3">
         <label for="name" class="form-label">Full Name*</label>
-        <input type="text" class="form-control" name="name" required>
+        <input type="text" class="form-control" id="name" name="name" required>
     </div>
     <div class="mb-3">
         <label for="message" class="form-label">Message*</label>
-        <textarea class="form-control" name="message" rows="10" required></textarea>
+        <textarea class="form-control" id="message" name="message" rows="10" required></textarea>
     </div>
     <input type="hidden" name="access_key" value="b1c20a4b-65ab-41e5-bcea-6dce82e72560">
     <button id="submit" type="submit" class="btn btn-primary">Submit</button>
@@ -44,7 +44,7 @@ url: /contact
             data-bs-title="Captcha is required"></div>
     </div>
 </form>
-<script src="https://web3forms.com/client/script.js" async defer></script>
+<script src="https://web3forms.com/client/script.js" defer></script>
 <script>
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', function (e) {
