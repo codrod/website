@@ -25,3 +25,19 @@ window.bootstrap.Collapse = Collapse;
 
 //Initialize all tooltips on the page
 [...document.querySelectorAll('[data-bs-toggle="tooltip"]')].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+//Contact Form
+const form = document.getElementById('contact-form');
+if(form) {
+    form.addEventListener('submit', function (e) {
+        const hCaptcha = document.querySelector('#contact-form textarea[name=h-captcha-response]');
+        if (! hCaptcha.value) {
+            e.preventDefault();
+            bootstrap
+                .Tooltip
+                .getOrCreateInstance(hCaptcha.parentElement)
+                .show();
+            return
+        }
+    });
+}

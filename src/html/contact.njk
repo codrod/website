@@ -44,18 +44,4 @@ url: /contact
             data-bs-title="Captcha is required"></div>
     </div>
 </form>
-<script src="https://web3forms.com/client/script.js" defer></script>
-<script>
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', function (e) {
-        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
-        if (! hCaptcha.value) {
-            e.preventDefault();
-            bootstrap
-                .Tooltip
-                .getOrCreateInstance(hCaptcha.parentElement)
-                .show();
-            return
-        }
-    });
-</script>
+<script src="https://web3forms.com/client/script.js" async></script>
