@@ -30,6 +30,9 @@
     <header>
       <nav id="navbar" class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
         <div class="container">
+          <a class="navbar-brand" href="/">
+            <img src="/icon.svg" alt="Icon" width="56" height="40">
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -43,13 +46,13 @@
           <div class="collapse navbar-collapse" id="navbar-content">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" href="/">About</a>
+                <a class="nav-link {% if page.url == "/" %} active {% endif %}" href="/">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/contact">Contact</a>
+                <a class="nav-link {% if page.url == "/contact/" %} active {% endif %}" href="/contact">Contact</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Resume
                 </a>
                 <ul class="dropdown-menu">
@@ -100,7 +103,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Links
                 </a>
                 <ul class="dropdown-menu">

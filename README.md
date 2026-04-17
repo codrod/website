@@ -4,7 +4,7 @@ This is the repository for my personal website [codrod.dev](https://codrod.dev).
 
 ## Development Environment Setup
 
-Follow the directions below for instructions on how to setup the repo for development work.
+Follow the instructions below to setup the repository for development.
 
 ### Dependencies
 
