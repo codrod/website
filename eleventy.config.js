@@ -5,6 +5,7 @@ module.exports = function(eleventyConfig) {
   //Note 11ty doesn't support a recursive copy to a target directory (with a different name) so images are stored in the img folder
   eleventyConfig.addPassthroughCopy({"assets/**": "./"});
   eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("files");
 
 	eleventyConfig.setServerOptions({
 		liveReload: true,
