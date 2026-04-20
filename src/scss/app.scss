@@ -1,19 +1,18 @@
+//Adjust the toggler color to white:
+//The bootstrap dark theme uses gray for the toggler instead I use
+//white for more contrast. Note the navbar text is also set to white
+//see below for more details.
+
+$navbar-dark-toggler-border-color: #fff;
+$navbar-dark-icon-color: #fff;
+
 @import "bootstrap/scss/bootstrap.scss";
 
-main {
-    min-height: calc(100vh - (128px + 56px));
-    @include media-breakpoint-up(md) {
-        min-height: calc(100vh - (128px + 96px));
-    }
-}
+//Adjust the navbar text colors to white:
+//The bootstrap dark theme uses gray for non-active links instead I use
+//white for more contrast and add an underline for active links
 
 #navbar {
-    font-size: 1.2rem;
-
-    @include media-breakpoint-up(md) {
-        height: 96px;
-    }
-
     a {
         color: #fff;
 
@@ -29,10 +28,170 @@ main {
     }
 }
 
+//Push the footer to the bottom:
+//This makes sure the footer appears at the bottom. Note I tried many other
+//options but this worked the best
+
+main {
+    min-height: calc(100vh - (128px + 56px));
+
+    @include media-breakpoint-up(md) {
+        min-height: calc(100vh - (128px + 96px));
+    }
+}
+
+#navbar {
+    @include media-breakpoint-up(md) {
+        height: 96px;
+    }
+}
+
 footer {
     height: 128px;
-    font-size: 1.2rem;
 }
+
+//Adjust dropdowns so they appear below the navbar:
+//The default dropdown appears below the text instead of below the navbar.
+
+#navbar {
+    @include media-breakpoint-up(md) {
+        .container {
+            height: 100%;
+
+            #navbar-content {
+                height: 100%;
+
+                .navbar-nav {
+                    height: 100%;
+                    align-items: center;
+
+                    .dropdown {
+                        height: 100%;
+                        align-content: center;
+
+                        .dropdown-menu {
+                            margin: 0;
+                            top: 99%;
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Move navbar icons appear on the right:
+
+#navbar {
+    @include media-breakpoint-up(md) {
+        .container {
+            #navbar-content {
+                .navbar-nav {
+                    flex-grow: 1;
+
+                    #navbar-icons {
+                        display: flex;
+                        flex-grow: 1;
+                        justify-content: end;
+
+                        .icon-link {
+                            margin-right: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Add spacers between icons
+    #navbar-icons {
+        .icon-link {
+            margin-right: 16px;
+        }
+    }
+}
+
+//Override REM sizes with pixel sizes:
+//Bootstrap uses REM for many different styles which causes the navbar and
+//footer to break when the browser font-size is changed to a very high setting
+
+#navbar {
+    font-size: 20px;
+    padding: 8px 0 8px 0;
+
+    .container {
+        padding: 0 12px 0 12px;
+
+        .navbar-brand {
+            padding: 5px 0 5px 0;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .navbar-toggler {
+            font-size: 20px;
+            padding: 4px 12px 4px 12px;
+            border-radius: 6px;
+
+            &:focus {
+                box-shadow: 0 0 0 4px;
+            }
+        }
+
+        #navbar-content {
+            .navbar-nav {
+                .nav-link {
+                    padding: 8px;
+                }
+
+                .dropdown {
+                    .dropdown-menu {
+                        padding: 8px 0 8px 0;
+                        font-size: 18px;
+                        min-width: 160px;
+                        margin-top: 0;
+
+                        @include media-breakpoint-down(sm) {
+                            border-radius: 6px;
+                        }
+
+                        .dropdown-item {
+                            padding: 4px 16px 4px 16px;
+                        }
+                    }
+                }
+
+                #navbar-icons {
+                    display: flex;
+                    align-content: center;
+                }
+            }
+        }
+
+        .icon-link {
+            gap: 6px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        padding: 0;
+    }
+}
+
+footer {
+    font-size: 20px;
+
+    .container {
+        padding: 0 12px 0 12px;
+
+        .icon-link {
+            gap: 6px;
+        }
+    }
+}
+
+//Profile styles used on the about page
 
 #profile-details {
     text-align: center;
