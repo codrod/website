@@ -6,6 +6,7 @@
 $navbar-dark-toggler-border-color: #fff;
 $navbar-dark-icon-color: #fff;
 
+//SASS variables must be set before importing bootstrap
 @import "bootstrap/scss/bootstrap.scss";
 
 //Adjust the navbar text colors to white:
@@ -81,33 +82,40 @@ footer {
     }
 }
 
-//Move navbar icons appear on the right:
+//Navbar icons styles:
 
 #navbar {
-    @include media-breakpoint-up(md) {
-        .container {
-            #navbar-content {
-                .navbar-nav {
-                    flex-grow: 1;
+    #navbar-content {
+        #navbar-icons {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
 
-                    #navbar-icons {
-                        display: flex;
-                        flex-grow: 1;
-                        justify-content: end;
+            border-top: 1px solid rgb(77, 77, 77);
+            margin-top: 8px;
 
-                        .icon-link {
-                            margin-right: 16px;
-                        }
+            padding-top: 16px;
+
+            .icon-link {
+                margin-right: 20px;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            .navbar-nav {
+                flex-grow: 1;
+
+                #navbar-icons {
+                    justify-content: end;
+                    border-top: none;
+                    margin-top: 0;
+                    padding-top: 8px;
+
+                    .icon-link {
+                        margin-right: 16px;
                     }
                 }
             }
-        }
-    }
-
-    //Add spacers between icons
-    #navbar-icons {
-        .icon-link {
-            margin-right: 16px;
         }
     }
 }
@@ -206,4 +214,13 @@ footer {
 #profile-image {
     height: 320px;
     width: 320px;
+}
+
+//Footer styles
+
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
