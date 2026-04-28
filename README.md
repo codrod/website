@@ -1,8 +1,8 @@
 # Website
 
-This is the repository for my personal website [codrod.dev](https://codrod.dev). The site is statically generated using [11ty](https://www.11ty.dev/) and hosted on [Github Pages](https://docs.github.com/en/pages). [Webpack](https://webpack.js.org/) is used for bundling JS and CSS. [PostCSS](https://postcss.org/) is used to polyfill and auto-prefix CSS for browser compatibility. [Babel](https://babeljs.io/) is used to transpile JS for browser compatibility. [Bootstrap](https://getbootstrap.com/) is the front-end framework. See "/.browserslistrc" for more information about support browsers.
+This is the repository for my personal website [codrod.dev](https://codrod.dev). The site is statically generated using [11ty](https://www.11ty.dev/) and hosted on [Github Pages](https://docs.github.com/en/pages). [Webpack](https://webpack.js.org/) is used for bundling JS and CSS. [PostCSS](https://postcss.org/) is used to polyfill and auto-prefix CSS for browser compatibility. [Babel](https://babeljs.io/) is used to transpile JS for browser compatibility. [Bootstrap](https://getbootstrap.com/) is the front-end framework. See "/.browserslistrc" for more information about supported browsers.
 
-## Development Environment Setup
+## Getting Started
 
 Follow the instructions below to setup the repository for development.
 
@@ -11,8 +11,6 @@ Follow the instructions below to setup the repository for development.
 This project uses Node.js which needs to be installed first but all other dependencies will be installed by NPM.
 
 * Node.js
-* NPM
-    * This should be installed with Node.js but it may need to be installed separately
 
 ### Building
 
@@ -25,16 +23,18 @@ This project uses Node.js which needs to be installed first but all other depend
 
 Changes are automatically published to Github Pages when pushed to the main branch.
 
-### NPM Commands
+### Scripts
+
+These are the NPM scripts defined for the repository.
 
 1. "npm start"
     * Starts the website in PROD mode at http://localhost:8080. Use this to test before publishing. Hot loading is NOT enabled.
 2. "npm run dev"
     * Starts the website in DEV mode at http://loocalhost:8080. Use this for development. Hot loading is enabled.
 3. "npm run build"
-    * Builds the website using PROD configs. Build artifacts are stored in "/dist". These are the artifacts which are published to Github Pages.
+    * Builds the website using PROD configs. Build artifacts are stored in "/dist". This is the script used to generate build artifacts when publishing.
 4. "npm run clean"
-    * Deletes the "dist/" folder
+    * Deletes the "/dist" folder
 
 ## Copyright
 
